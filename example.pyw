@@ -9,7 +9,7 @@ from PyQt5.uic import loadUi
 from ColorUtils import *
 from ColorPicker import ColorPicker
 
-def changeStyleSheet(object : any, stylesheet : str) -> None: # Made to avoid stylesheet confict crash error
+def changeStyleSheet(object : any, stylesheet : str) -> None: # Made to avoid stylesheet conflict crash error
     if object.styleSheet() != stylesheet:
         object.setStyleSheet(stylesheet)
 

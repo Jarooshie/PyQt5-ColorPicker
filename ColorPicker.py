@@ -47,7 +47,6 @@ class HueMap(QLabel):
     def mousePressEvent(self, event):
         mouse = QCursor().pos()
         self._Y = mouse.y() - self.parent().frameGeometry().y()  - self.frameGeometry().y() - 30
-        # print(self._Y)
 
         self.cursor_posY = clamp(self._Y,0,self.height())
 

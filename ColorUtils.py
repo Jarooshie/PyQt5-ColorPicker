@@ -98,7 +98,7 @@ def hex_to_rgb(hex : str) -> tuple[int]:
         hex color - ex: "#00ff00"
 
     Return:
-        luminance - (r, g, b)
+        tuple[int] - (r, g, b)
     """
     return (int(hex[1:3], 16),int(hex[3:5], 16),int(hex[5:7], 16))
 
