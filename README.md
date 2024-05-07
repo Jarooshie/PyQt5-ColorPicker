@@ -7,7 +7,7 @@ A fully custom-made color picker class that you can seamlessly integrate into yo
 </p>
 
 <p align="center">
-  <i>Please note that the app above is the 'example.pyw' code, The class itself ONLY contains the Color Picker shown at the top left</i>
+  <i>Please note that the app above is the 'example2.pyw' code, The class itself ONLY contains the Color Picker shown at the top left, Consider checking out 'exmaple.pyw' for better understanding.</i>
 </p>
 
 ## Requirements
@@ -59,7 +59,7 @@ picker.color_changed.connect(FUNCTION_TO_CALL)
 # Initialization
 picker = ColorPicker(self)
 picker.move(20,20)
-picker.setFixedSize(200,200)
+picker.setFixedSize(200,200) # It's highly recommeded to give the same width and height for the picker.
 
 # Signal
 picker.color_changed.connect(lambda: print(picker.getColorRGB()))
