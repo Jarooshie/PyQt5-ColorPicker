@@ -15,7 +15,7 @@ class Window(QWidget):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("Color Picker ex2")
+        self.setWindowTitle("Color Picker ex1")
 
         self.setFixedWidth(280)
         self.setFixedHeight(240)
