@@ -23,7 +23,7 @@ class Window(QWidget):
         
         self.setStyleSheet("QWidget{ background-color: #1a1a1a; }")
 
-        self.picker = ColorPicker("", self)
+        self.picker = ColorPicker(self)
 
         self.picker.move(20,20)
 

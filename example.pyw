@@ -22,11 +22,11 @@ class Window(QWidget):
         
         self.setStyleSheet("QWidget{ background-color: #1a1a1a; }")
 
-        self.picker = ColorPicker("", self)
+        self.picker = ColorPicker(self)
         self.picker.move(20,20)
         self.picker.setFixedSize(200,200)
 
-        self.picker.color_changed.connect(lambda: changeStyleSheet(self,f"background-color: {self.picker.getColorHEX()};"))
+        self.picker.color_changed.connect(lambda: changeStyleSheet(self, f"background-color: {self.picker.getColorHEX()};"))
 
         self.show()
 
