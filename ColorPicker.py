@@ -83,9 +83,9 @@ class ColorPicker(QLabel):
     def __init__(self, *args, **kwargs):
         super(ColorPicker, self).__init__(*args, **kwargs)
 
-        self.H = 1
-        self.S = 1
-        self.V = 1
+        self.H = 1.0
+        self.S = 1.0
+        self.V = 1.0
 
         self.RGB = hsv_to_rgb(self.H,self.S,self.V)
 
@@ -133,6 +133,9 @@ class ColorPicker(QLabel):
     
     def getColorHSL(self):
         return hsv_to_hsl(self.H,self.S,self.V)
+    
+    def getColorHSV(self):
+        return (self.H,self.S,self.V)
     
     def getColorHEX(self):
         return rgb_to_hex(*self.getColorRGB())
