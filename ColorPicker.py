@@ -1,5 +1,4 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QLabel
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
@@ -37,7 +36,6 @@ class HueMap(QLabel):
     def setHue(self, hue):
         self.cursor_posY = int((1-hue) * self.height())
 
-
         self._cursor.move(self.x() - self.width() // 2,self.cursor_posY - self._cursor.height() // 2 + self.y())
 
         self.H = hue
@@ -54,8 +52,6 @@ class HueMap(QLabel):
 
         self.H = 1 - self.cursor_posY / self.height()
 
-        self.oldPos = event.globalPos()
-
         self.color_changed.emit()
 
     def mouseMoveEvent(self, event):
@@ -64,12 +60,9 @@ class HueMap(QLabel):
 
         self.cursor_posY = clamp(self._Y,0,self.height())
 
-
         self._cursor.move(self.x() - self.width() // 2,self.cursor_posY - self._cursor.height() // 2 + self.y())
 
         self.H = 1 - self.cursor_posY / self.height()
-
-        self.oldPos = event.globalPos()
 
         self.color_changed.emit()
 
@@ -172,9 +165,6 @@ class ColorPicker(QLabel):
 
         self.S = self.cursor_posX / self.width()
         self.V = 1 - self.cursor_posY / self.height()
-
-        self.oldPos = event.globalPos()
-
         
         self.color_changed.emit()
 
@@ -190,8 +180,6 @@ class ColorPicker(QLabel):
 
         self.S = self.cursor_posX / self.width()
         self.V = 1 - self.cursor_posY / self.height()
-
-        self.oldPos = event.globalPos()
 
         self.color_changed.emit()
 
